@@ -118,4 +118,16 @@ describe JeRobot2::Robot do
     expect(subject.y).to eq(-4)
   end
 
+  context '#report' do
+    subject { JeRobot2::Robot.new(5, 4, 'EAST') }
+
+    it 'provides the current location and direction of the robot' do
+      expect(subject.report).to eq({
+        x: 5,
+        y: 4,
+        facing: 'EAST'
+        })
+    end
+  end
+
 end

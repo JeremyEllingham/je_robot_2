@@ -43,5 +43,13 @@ module JeRobot2
       @facing = FACING.rotate(1)[FACING.index(@facing)]
     end
 
+    def report
+      {
+        x: @x,
+        y: @y,
+        facing: @facing
+      }
+    end
+
   end
 end

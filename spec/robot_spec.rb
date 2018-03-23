@@ -9,6 +9,16 @@ describe JeRobot2::Robot do
       subject.move
       expect(subject.y).to eq(1)
     end
+
+    it 'turns left to face west' do
+      subject.turn_left
+      expect(subject.facing).to eq('WEST')
+    end
+
+    it 'turns right to face east' do
+      subject.turn_right
+      expect(subject.facing).to eq('EAST')
+    end
   end
 
   context 'when facing SOUTH' do
@@ -17,6 +27,16 @@ describe JeRobot2::Robot do
     it 'moves south' do
       subject.move
       expect(subject.y).to eq(-1)
+    end
+
+    it 'turns left to face east' do
+      subject.turn_left
+      expect(subject.facing).to eq('EAST')
+    end
+
+    it 'turns right to face west' do
+      subject.turn_right
+      expect(subject.facing).to eq('WEST')
     end
   end
 
@@ -27,6 +47,16 @@ describe JeRobot2::Robot do
       subject.move
       expect(subject.x).to eq(1)
     end
+
+    it 'turns left to face north' do
+      subject.turn_left
+      expect(subject.facing).to eq('NORTH')
+    end
+
+    it 'turns right to face south' do
+      subject.turn_right
+      expect(subject.facing).to eq('SOUTH')
+    end
   end
 
   context 'when facing WEST' do
@@ -35,6 +65,16 @@ describe JeRobot2::Robot do
     it 'moves west' do
       subject.move
       expect(subject.x).to eq(-1)
+    end
+
+    it 'turns left to face south' do
+      subject.turn_left
+      expect(subject.facing).to eq('SOUTH')
+    end
+
+    it 'turns right to face north' do
+      subject.turn_right
+      expect(subject.facing).to eq('NORTH')
     end
   end
 

@@ -7,6 +7,8 @@ module JeRobot2
     attr_reader :y
     attr_reader :facing
 
+    FACING = ['NORTH', 'EAST', 'SOUTH', 'WEST']
+
     def initialize(x = 0, y = 0, facing='NORTH')
       @x = x
       @y = y
@@ -31,6 +33,14 @@ module JeRobot2
 
     def move_south
       @y -= 1
+    end
+
+    def turn_left
+      @facing = FACING.rotate(-1)[FACING.index(@facing)]
+    end
+
+    def turn_right
+      @facing = FACING.rotate(1)[FACING.index(@facing)]
     end
 
   end

@@ -3,19 +3,29 @@ require 'je_robot2/version'
 module JeRobot2
   class Robot
 
-    attr_reader :position
+    attr_reader :x
+    attr_reader :y
 
-    def initialize(position = 0)
-      @position = position
+    def initialize(x = 0, y = 0)
+      @x = x
+      @y = y
     end
 
     def move_east
-      @position += 1
+      @x += 1
     end
 
     def move_west
-      @position -= 1
+      @x -= 1
     end
+
+    def move_north
+      @y += 1
+    end
+
+    def move_south
+      @y -= 1
+    end 
 
   end
 end

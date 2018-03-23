@@ -5,10 +5,16 @@ module JeRobot2
 
     attr_reader :x
     attr_reader :y
+    attr_reader :facing
 
-    def initialize(x = 0, y = 0)
+    def initialize(x = 0, y = 0, facing='NORTH')
       @x = x
       @y = y
+      @facing = facing
+    end
+
+    def move
+      send("move_#{@facing.downcase}")
     end
 
     def move_east
@@ -25,7 +31,7 @@ module JeRobot2
 
     def move_south
       @y -= 1
-    end 
+    end
 
   end
 end

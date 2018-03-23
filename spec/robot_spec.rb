@@ -1,7 +1,42 @@
 require 'spec_helper'
 
 describe JeRobot2::Robot do
-  subject { JeRobot2::Robot.new(0, 0) }
+
+  context 'when facing NORTH' do
+    subject { JeRobot2::Robot.new(0, 0, 'NORTH') }
+
+    it 'moves north' do
+      subject.move
+      expect(subject.y).to eq(1)
+    end
+  end
+
+  context 'when facing SOUTH' do
+    subject { JeRobot2::Robot.new(0, 0, 'SOUTH') }
+
+    it 'moves south' do
+      subject.move
+      expect(subject.y).to eq(-1)
+    end
+  end
+
+  context 'when facing EAST' do
+    subject { JeRobot2::Robot.new(0, 0, 'EAST') }
+
+    it 'moves east' do
+      subject.move
+      expect(subject.x).to eq(1)
+    end
+  end
+
+  context 'when facing WEST' do
+    subject { JeRobot2::Robot.new(0, 0, 'WEST') }
+
+    it 'moves west' do
+      subject.move
+      expect(subject.x).to eq(-1)
+    end
+  end
 
   it "moves 3 spaces east" do
     3.times { subject.move_east }

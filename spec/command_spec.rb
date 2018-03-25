@@ -24,4 +24,28 @@ describe JeRobot2::Command do
       end
     end
 
+    context 'LEFT' do
+      it 'accepts a LEFT command' do
+        command, *args = JeRobot2::Command.process("LEFT")
+        expect(command). to eq(:turn_left)
+        expect(args).to be_empty
+      end
+    end
+
+    context 'RIGHT' do
+      it 'accepts a RIGHT command' do
+        command, *args = JeRobot2::Command.process("RIGHT")
+        expect(command). to eq(:turn_right)
+        expect(args).to be_empty
+      end
+    end
+
+    context 'REPORT' do
+      it 'accepts a REPORT command' do
+        command, *args = JeRobot2::Command.process("REPORT")
+        expect(command). to eq(:report)
+        expect(args).to be_empty
+      end
+    end
+
 end

@@ -9,6 +9,12 @@ module JeRobot2
         [:place, $~[:x].to_i, $~[:y].to_i, $~[:facing]]
       when /\AMOVE\Z/
         [:move]
+      when /\ALEFT\Z/
+        [:turn_left]
+      when /\ARIGHT\Z/
+        [:turn_right]
+      when /\AREPORT\Z/
+        [:report]
       else
         [:invalid, command]
       end
